@@ -1,3 +1,5 @@
+#Role Playing Game Queries
+
 import os
 import sqlite3
 
