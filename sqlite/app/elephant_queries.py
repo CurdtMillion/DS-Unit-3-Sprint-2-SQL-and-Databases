@@ -3,7 +3,7 @@ import psycopg2
 from psycopg2.extras import DictCursor
 from dotenv import load_dotenv
 
-DB_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "data", "rpg.db")
+#DB_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "data", "rpg.db")
 
 load_dotenv()
 
@@ -21,4 +21,12 @@ print("CURSOR: ", type(cursor))
 cursor.execute('SELECT * from test_table;')
 
 result = cursor.fetchone()
-print(result)
+#print(result)
+
+## Connecting to SQLite3 DB for RPG data ##
+
+import sqlite3
+sl_conn = sqlite3.connect("rpq_db.sqlite3")
+sl_cursor = sl_conn.cursor()
+characters = sl_cursor.execute('SELECT * FROM charactercreator_character LIMIT 10').fetchall()
+print(characters)
