@@ -18,6 +18,7 @@ print("CONNECTION: ", type(connection))
 cursor = connection.cursor()
 print("CURSOR: ", type(cursor))
 
+cursor.execute('SELECT * from test_table;')
 
-#cursor.execute('SELECT * from test_table;')
-#result = cursor.fetchone()
+result = cursor.fetchone()
+print(result)
