@@ -57,6 +57,7 @@ INSERT INTO rpg_characters (name, level, exp, hp, strength, intelligence, dexter
    'Igor', 10, 43, 54, 123, 345, 66, 100 
 )
 '''
+
 cursor_pg.execute(create_character_table_query)
 cursor_pg.execute(add_data_query)
 
