@@ -34,14 +34,14 @@ print(characters)
 create_character_table_query = '''
 CREATE TABLE IF NOT EXISTS rpg_characters (
     character_id SERIAL PRIMARY KEY,
-    name VARCHAR(30) NOT NULL,
-    level INT,
-    exp INT,
-    hp INT,
-    strength INT,
-    intelligence INT,
-    dexterity INT,
-    wisdom INT
+      name VARCHAR(30),
+      level INT,
+      exp INT,
+      hp INT,
+      strength INT,
+      intelligence INT,
+      dexterity INT,
+      wisdom INT
 )
 '''
 
@@ -61,6 +61,13 @@ INSERT INTO rpg_characters (name, level, exp, hp, strength, intelligence, dexter
 cursor_pg.execute(create_character_table_query)
 cursor_pg.execute(add_data_query)
 
+for character in characters:
+
+    insert_query = f''' INSERT INTO rpg_characters 
+        (character_id, name, level, exp, hp, strength, intelligence, dexterity, wisdom) VALUES
+        {character}
+    '''
+    cursor_pg.execute(insert_query)
 
 connection.commit()
 connection.close()
