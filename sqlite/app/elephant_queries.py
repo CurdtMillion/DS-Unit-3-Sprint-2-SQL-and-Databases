@@ -25,7 +25,7 @@ print("CURSOR_PG: ", type(cursor_pg))
 
 ## Connecting to SQLite3 DB for RPG data ##
 
-characters = cursor.execute('SELECT * FROM charactercreator_character LIMIT 10').fetchall()
+characters = cursor.execute('SELECT * FROM charactercreator_character').fetchall()
 print(characters)
 
 
