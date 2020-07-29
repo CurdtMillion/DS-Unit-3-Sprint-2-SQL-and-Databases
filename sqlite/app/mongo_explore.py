@@ -1,9 +1,10 @@
 import pymongo
 import os
+import json
 from dotenv import load_dotenv
 from pdb import set_trace as breakpoint
 import sqlite3
-
+from sql_to_mongo import put_sqltable_in_dict
 
 
 load_dotenv()
