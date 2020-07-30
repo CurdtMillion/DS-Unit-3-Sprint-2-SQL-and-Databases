@@ -1,3 +1,7 @@
+# Answer to assignment:  I found that both ways had easy parts and difficult parts to understand and 
+# execute.  With mongodb I had to convert a query to json and then send it to the server
+# With postgres I had to iterate over each row.  There are trade offs to both.
+
 import pymongo
 import os
 import json
